@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: #262626;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #fff900;
+            text-shadow: 0 0 10px #fff900;
+            margin-left: 45%;
+            padding: 10px;
+            border-radius: 5px;
+            animation: animate 1s;
+        }
+
+        .calculator {
+            font-size: 30px;
+            height: 100px;
+            margin-left: 32%;
+            background: #262626;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            color: #fff900;
+        }
+
+        .calculator input[type="number"],
+        .calculator select,
+        .calculator input[type="submit"] {
+            margin: 10px;
+            padding: 10px;
+            width: 150px;
+            background: #262626;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            color: #fff900;
+            font-size: 20px;
+            text-shadow: 0 1px 5px #fff900;
+
+        }
+
+        .calculator input[type="submit"] {
+            background: #262626;
+            font-size: 40px;
+            height: 50px;
+            color: #fff900;
+            text-shadow: 0 0 7px #fff900;
+            border: white;
+            cursor: pointer;
+            width: 50px;
+        }
+
+        input[name="main"] {
+            position: absolute;;
+            font-size: 20px;
+            top: 10px;
+            width: 310px;
+            height: 35px;
+            background: #262626;
+            border: 2px solid;
+            padding: 5px;
+            text-shadow: 0 0 10px #fff900;
+            color: #fff900;
+        }
+
+        div[id="error-banner"] {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            display: none;
+        }
+
+        @keyframes animate {
+            0% {
+                color: #484848;
+                text-shadow: none;
+            }
+            20% {
+                color: #fff900;
+                text-shadow: 0 0 10px #fff900, 0 0 10px #ff6c00;
+            }
+            35% {
+                color: #484848;
+                text-shadow: none;
+            }
+            70% {
+                color: #fff900;
+                text-shadow: 0 0 10px #fff900, 0 0 10px #ff6c00;
+            }
+            80% {
+                color: #484848;
+                text-shadow: none;
+            }
+
+            90% {
+                color: #fff900;
+                text-shadow: 0 0 10px #fff900, 0 0 10px #ff6c00;
+            }
+            100% {
+                color: #fff900;
+                text-shadow: 0 0 10px #fff900, 0 0 20px #ff6c00;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>Калькулятор</h1>
+<form method="get" action="/main">
+    <input name="main" type="submit" value="Вернуться на главную страницу">
+</form>
+<div id="error-banner">
+    Ошибка: <span id="error-message"></span>
+</div>
+<div class="calculator">
+    <form action="/result" method="post">
+        <input type="number" name="num1" placeholder="Число 1" required>
+        <select name="operation" required>
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        <input type="number" name="num2" placeholder="Число 2" required>
+        <input name="res" type="submit" value="=">
+    </form>
+
+</div>
+<script>
+    var showErrorBanner = [[${showErrorBanner}]];
+    var errorMessage = "[[${errorMessage}]]";
+
+    if (showErrorBanner) {
+        document.getElementById("error-message").textContent = errorMessage;
+        document.getElementById("error-banner").style.display = "block";
+    }
+</script>
+</body>
+</html>

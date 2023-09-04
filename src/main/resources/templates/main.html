@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        input {
+            background: #262626;
+            margin-right: 15px;
+            margin-top: 10px;
+            padding: 0;
+            color: #525252;
+            border: none;
+        }
+
+        input:hover {
+            color: #fff900;
+            text-shadow: 0 0 7px #fff900, 0 0 10px #ff6c00 ;
+            animation: animate 2s;
+        }
+
+        body {
+            background: #262626;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        ul li {
+            list-style: none;
+            font-family: arial;
+            font-size: 3em;
+            letter-spacing: 15px;
+            text-shadow: none;
+            animation: animate 1s infinite linear;
+        }
+
+        @keyframes animate {
+            0% {
+                color: #484848;
+                text-shadow: none;
+            }
+            18% {
+                color: #484848;
+                text-shadow: none;
+            }
+            20% {
+                color: #fff900;
+                text-shadow: 0 0 7px #fff900, 0 0 20px #ff6c00;
+            }
+            30% {
+                color: #484848;
+                text-shadow: none;
+            }
+            35% {
+                color: #fff900;
+                text-shadow: 0 0 7px #fff900, 0 0 20px #ff6c00;
+            }
+            70% {
+                color: #484848;
+                text-shadow: none;
+            }
+            85% {
+                color: #fff900;
+                text-shadow: 0 0 7px #fff900, 0 0 20px #ff6c00;
+            }
+            90% {
+                color: #484848;
+                text-shadow: none;
+            }
+            100% {
+                color: #484848;
+                text-shadow: none;
+            }
+        }
+
+        ul li:nth-child(1) {
+            animation-delay: .2s;
+        }
+
+        ul li:nth-child(2) {
+            animation-delay: .4s;
+        }
+
+        ul li:nth-child(3) {
+            animation-delay: .6s;
+        }
+
+        ul li:nth-child(4) {
+            animation-delay: .8s;
+        }
+
+        ul li:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        ul li:nth-child(6) {
+            animation-delay: 1.2s;
+        }
+
+        ul li:nth-child(7) {
+            animation-delay: 1.4s;
+        }
+
+        ul li:nth-child(8) {
+            animation-delay: 1.6s;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Главное меню</title>
+</head>
+<body>
+<ul>
+    <form method="get" action="/converter">
+        <input type="submit" value="Конвертер валют" style="font-size: 25px">
+    </form>
+    <li>M</li>
+    <li>A</li>
+    <li>I</li>
+    <li>N</li>
+
+    <li>M</li>
+    <li>E</li>
+    <li>N</li>
+    <li>U</li>
+    <form method="get" action="/calc">
+        <input type="submit" value="Калькулятор" style="font-size: 25px">
+    </form>
+
+</ul>
+</body>
+</html>

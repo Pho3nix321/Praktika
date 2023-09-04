@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: #262626;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            position: relative;
+            text-decoration: none;
+            font-size: 20px;
+            width: 300px;
+            height: 20px;
+            top: 10px;
+            background: #262626;
+            border: 2px solid;
+            padding: 5px;
+            text-shadow: 0 0 7px #fff900;
+            color: #fff900;
+        }
+
+        p {
+            border: #262626;
+            outline: #262626;
+            color: #fff900;
+            text-shadow: 0 0 15px #fff900;
+            background: #262626;
+            position: absolute;
+            font-size: 50px;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            appearance: none;
+            animation: animate 1s;
+        }
+        @keyframes animate {
+            0% {
+                color: #484848;
+                text-shadow: none;
+            }
+            20% {
+                color: #fff900;
+                text-shadow: 0 0 10px #fff900, 0 0 7px #ff6c00;
+            }
+            35% {
+                color: #484848;
+                text-shadow: none;
+            }
+            70% {
+                color: #fff900;
+                text-shadow: 0 0 10px #fff900, 0 0 7px #ff6c00;
+            }
+            80% {
+                color: #484848;
+                text-shadow: none;
+            }
+
+            90% {
+                color: #fff900;
+                text-shadow: 0 0 10px #fff900, 0 0 7px #ff6c00;
+            }
+            100% {
+                color: #fff900;
+                text-shadow: 0 0 10px #fff900, 0 0 7px #ff6c00;
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get" action="/calc">
+    <a href="/calc">Вернуться к калькулятору</a>
+</form>
+<p><b>Ответ:</b><span th:text="${result}"></span></p>
+</body>
+</html>

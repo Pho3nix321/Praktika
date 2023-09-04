@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <style>
+        select{
+            border: #262626;
+            outline: #262626;
+            color: mistyrose;
+            text-shadow: 0 0 7px mistyrose;
+            background: #262626;
+            appearance: none;
+        }
+        body {
+            background: #262626;
+            margin: 0;
+            padding: 0;
+        }
+
+        select[name="Valute"] {
+            position: absolute;
+            font-size: 20px;
+            top: 20%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        input[name="amount"]{
+            position: absolute;
+            font-size: 15px;
+            top: 25%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background: #262626;
+            color: mistyrose;
+            text-shadow: 0 0 7px mistyrose;
+        }
+        p{
+            position: absolute;
+            font-size: 20px;
+            top: 25%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        select[name="Valute2"] {
+            position: absolute;
+            font-size: 20px;
+            top: 20%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        a {
+            position: absolute;
+            text-decoration: none;
+            font-size: 20px;
+            top: 10px;
+            width: 280px;
+            height: 20px;
+            background: #262626;
+            border: 2px solid ;
+            padding: 5px;
+            text-shadow: 0 0 7px #fff900;
+            color: #fff900;
+        }
+        input[type="submit"] {
+            position: absolute;
+            font-size: 20px;
+            top: 20%;
+            left: 48%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            display: flex;
+            text-decoration: none;
+            width: 155px;
+            height: 25px;
+            background: #262626;
+            border:none ;
+            color: #525252;
+            padding: 0px;
+
+        }
+
+        input[type="submit"]:hover {
+            color: #fff900;
+            text-shadow: 0 0 7px #fff900;
+            animation: animka 1s;
+            cursor: pointer;
+        }
+        h1{
+            color: #fff900;
+            text-shadow: 0 0 10px #fff900;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            animation: animate 1s ;
+        }
+        p{
+            border: #262626;
+            outline: #262626;
+            color: mistyrose;
+            text-shadow: 0 0 7px mistyrose;
+            background: #262626;
+            appearance: none;
+
+        }
+        @keyframes animate {
+            0% {
+                color: #484848;
+                text-shadow: none;
+            }
+            20% {
+                color: #484848;
+                text-shadow: none;
+            }
+            35%{
+                color: #484848;
+                text-shadow: none;
+            }
+            70% {
+                color: #fff900;
+                text-shadow: 0 0 5px #fff900, 0 0 7px #ff6c00;
+            }
+            90% {
+                color: #fff900;
+                text-shadow: 0 0 5px #fff900, 0 0 10px #ff6c00;
+            }
+            100% {
+                color: #fff900;
+                text-shadow: 0 0 7px #fff900, 0 0 20px #ff6c00;
+            }
+        }
+        @keyframes animka {
+            0% {
+                color: #484848;
+                text-shadow: none;
+            }
+            18% {
+                color: #484848;
+                text-shadow: none;
+            }
+            20% {
+                color: #fff900;
+                text-shadow: 0 0 7px #fff900, 0 0 20px #ff6c00;
+            }
+            30% {
+                color: #484848;
+                text-shadow: none;
+            }
+            35% {
+                color: #fff900;
+                text-shadow: 0 0 7px #fff900, 0 0 20px #ff6c00;
+            }
+            70% {
+                color: #484848;
+                text-shadow: none;
+            }
+            85% {
+                color: #fff900;
+                text-shadow: 0 0 7px #fff900, 0 0 20px #ff6c00;
+            }
+            100% {
+                color: #484848;
+                text-shadow: none;
+            }
+        }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Конвертер валют</title>
+</head>
+<body>
+<a href="/main">Вернуться на главную страницу</a>
+<form method="post" action="/converter">
+    <h1 style="font-size: 25px">Выберите валюту для конвертации</h1>
+    <select name="Valute" >
+        <option value="RUB" th:selected="${Valute == 'RUB'}">Рубль</option>
+        <option value="DOLLAR" th:selected="${Valute == 'DOLLAR'}">Доллар</option>
+        <option value="EURO" th:selected="${Valute == 'EURO'}">Евро</option>
+        <option value="YUAN" th:selected="${Valute == 'YUAN'}">Юань</option>
+    </select>
+    <input th:value="${amount}" required name="amount" type="number" >
+    <select name="Valute2" >
+        <option value="RUB" th:selected="${Valute2 == 'RUB'}">Рубль</option>
+        <option value="DOLLAR" th:selected="${Valute2 == 'DOLLAR'}">Доллар</option>
+        <option value="EURO" th:selected="${Valute2 == 'EURO'}">Евро</option>
+        <option value="YUAN" th:selected="${Valute2 == 'YUAN'}">Юань</option>
+    </select>
+    <p><b>Результат:</b> <span th:text="${convertetAmount}"></span></p>
+    <input type="submit" value="Конвертировать">
+</form>
+</body>
+</html>
